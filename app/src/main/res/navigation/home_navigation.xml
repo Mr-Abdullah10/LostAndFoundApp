@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/item_home">
+
+    <fragment
+        android:id="@+id/item_home"
+        android:name="com.abdullah.lostfound.ui.main.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/item_lost"
+        android:name="com.abdullah.lostfound.LostFragment"
+        android:label="LostFragment" />
+    <fragment
+        android:id="@+id/item_found"
+        android:name="com.abdullah.lostfound.FoundFragment"
+        android:label="FoundFragment" />
+    <fragment
+        android:id="@+id/item_search"
+        android:name="com.abdullah.lostfound.SearchFragment"
+        android:label="SearchFragment" />
+</navigation>

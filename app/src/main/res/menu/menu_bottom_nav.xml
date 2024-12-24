@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/item_lost"
+        android:icon="@drawable/lost"
+        android:title="Lost" />
+    <item
+        android:id="@+id/item_found"
+        android:icon="@drawable/found"
+        android:title="Found" />
+    <item
+        android:id="@+id/item_search"
+        android:icon="@drawable/search"
+        android:title="Search" />
+</menu>
