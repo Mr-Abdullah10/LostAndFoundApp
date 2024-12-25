@@ -12,6 +12,17 @@
         android:elevation="4dp"
         android:layout_margin="8dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/baseline_add_24"
+            android:scaleType="fitCenter" />
         <!-- Order ID -->
         <TextView
             android:layout_width="wrap_content"
@@ -49,7 +60,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/item"
+            android:id="@+id/categoryinput"
             android:text="Smart Watch"
             android:textColor="@color/black"
             android:paddingBottom="8dp" />
@@ -59,12 +70,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Extra Information"
+            android:text="Item Description"
             android:textStyle="bold" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/extraInfromation"
+            android:id="@+id/descriptioninput"
             android:text="Fragile, Handle with care"
             android:textColor="@color/black"
             android:paddingBottom="8dp" />
@@ -73,12 +84,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Post Address"
+            android:text="Address"
             android:textStyle="bold" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/postalAddress"
+            android:id="@+id/addressinput"
             android:text="123 Street Name, City, Country"
             android:textColor="@color/black"
             android:paddingBottom="8dp" />
@@ -92,21 +103,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/userName"
+            android:id="@+id/nameinput"
             android:text="John Doe"
             android:textColor="@color/black"
             android:paddingBottom="4dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/userEmail"
+            android:id="@+id/email"
             android:text="johndoe@example.com"
             android:textColor="@color/black"
             android:paddingBottom="4dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/userContact"
+            android:id="@+id/contactinput"
             android:text="+123456789"
             android:textColor="@color/black"
             android:paddingBottom="8dp" />

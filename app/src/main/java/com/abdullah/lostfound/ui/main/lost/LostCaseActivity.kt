@@ -59,9 +59,20 @@ class LostCaseActivity : AppCompatActivity() {
             val address = binding.addressinput.text.toString().trim()
             val contact = binding.contactinput.text.toString().trim()
             val category = binding.categoryinput.selectedItem?.toString()?.trim() ?: ""
+            val userId = binding.userId.text.toString().trim()
+            val postDate = binding.postDate.text.toString().trim()
+            val image = binding.imageView2.toString().trim()
+            val email = binding.email.text.toString().trim()
+            val userName = binding.nameinput.text.toString().trim()
+            val status = "Pending"
+            val isLost = binding.radioLost.isChecked
+            val isFound = binding.radioFound.isChecked
+
+
 
             // Validate the input fields
-            if (name.isEmpty() || description.isEmpty() || address.isEmpty() || contact.isEmpty()) {
+            if (name.isEmpty() || description.isEmpty() || address.isEmpty() || contact.isEmpty()
+                || userId.isEmpty() || postDate.isEmpty() || image.isEmpty() || email.isEmpty() || userName.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -73,6 +84,15 @@ class LostCaseActivity : AppCompatActivity() {
                 this.address = address
                 this.contact = contact
                 this.category = category
+                this.status = status
+                this.userId = userId
+                this.postDate = postDate
+                this.image = image
+                this.email = email
+                this.userName = userName
+                this.isLost = isLost
+                this.isFound = isFound
+
             }
 
             // Save the lost item

@@ -5,38 +5,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.lost.LostCaseActivity"
-    >
+    tools:context=".ui.main.lost.LostCaseActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="match_parent"
-        >
+        android:orientation="vertical">
 
-
+        <!-- Logo -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#154854"
-            >
+            android:background="#154854">
+
             <ImageView
                 android:id="@+id/ivLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/logo"
-                />
+                android:src="@drawable/logo" />
         </LinearLayout>
 
+        <!-- Form Content -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingHorizontal="20dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
+            <!-- Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,21 +43,102 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
+            <!-- Is Lost Item -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Image"/>
+                android:layout_marginTop="15dp"
+                android:text="Is this a Lost or Found Item?"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupLostFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/radioLost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lost"
+                    android:checked="true"
+                    android:textColor="#5D6D7E" />
+
+                <RadioButton
+                    android:id="@+id/radioFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Found"
+                    android:layout_marginStart="20dp"
+                    android:textColor="#5D6D7E" />
+            </RadioGroup>
+
+            <!-- Image -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image" />
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/baseline_add_24"
-                android:scaleType="fitCenter"
-                android:id="@+id/imageView2"
-                />
+                android:scaleType="fitCenter" />
+
+            <!-- User ID -->
+            <TextView
+                android:id="@+id/userIdLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="User ID" />
+
+            <EditText
+                android:id="@+id/userId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter User ID"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp"
+                android:inputType="textCapWords"
+                android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/namelabel"
+                android:id="@+id/categorylabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:layout_marginTop="15dp" />
+            <Spinner
+                android:id="@+id/categoryinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp" />
+
+            <!-- Post Date -->
+            <TextView
+                android:id="@+id/postDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Post Date" />
+
+            <EditText
+                android:id="@+id/postDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Post Date"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp"
+                android:inputType="date"
+                android:layout_marginTop="8dp" />
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/nameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -74,86 +152,69 @@
                 android:background="@drawable/edit_text_background"
                 android:padding="12dp"
                 android:inputType="textCapWords"
-                app:layout_constraintTop_toBottomOf="@id/namelabel"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
                 android:layout_marginTop="8dp" />
 
-
-
-
+            <!-- Email -->
             <TextView
-                android:id="@+id/categorylabel"
+                android:id="@+id/emailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Category"
                 android:layout_marginTop="15dp"
-                />
-            <Spinner
-                android:id="@+id/categoryinput"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                />
+                android:hint="Enter Email Address"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="8dp" />
 
+            <!-- Extra Information -->
             <TextView
-                android:id="@+id/descriptionlabel"
+                android:id="@+id/extraInfoLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Description"
-                android:textAlignment="center"
-                />
+                android:layout_marginTop="15dp"
+                android:text="Item Description" />
+
             <EditText
                 android:id="@+id/descriptioninput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Description"
+                android:hint="Enter Item Description"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp"
+                android:inputType="textMultiLine"
+                android:layout_marginTop="8dp" />
+
+            <!-- Address -->
+            <TextView
+                android:id="@+id/addressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Address" />
+
+            <EditText
+                android:id="@+id/addressinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Address"
                 android:background="@drawable/edit_text_background"
                 android:padding="12dp"
                 android:inputType="textCapWords"
-                app:layout_constraintTop_toBottomOf="@id/descriptionlabel"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
                 android:layout_marginTop="8dp" />
 
+            <!-- Contact Number -->
             <TextView
-                android:id="@+id/addresslabel"
+                android:id="@+id/contactLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
-                android:textAlignment="center"
                 android:layout_marginTop="15dp"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <EditText
-                    android:id="@+id/addressinput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Enter Address"
-                    android:background="@drawable/edit_text_background"
-                    android:padding="12dp"
-                    android:inputType="textCapWords"
-                    app:layout_constraintTop_toBottomOf="@id/addresslabel"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0"
-                    android:layout_marginTop="8dp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/contaclable"
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact Number"
-                />
+                android:text="Contact Number" />
 
             <EditText
                 android:id="@+id/contactinput"
@@ -162,27 +223,18 @@
                 android:hint="Enter Your Mobile Number"
                 android:background="@drawable/edit_text_background"
                 android:padding="12dp"
-                android:inputType="textCapWords"
-                app:layout_constraintTop_toBottomOf="@id/contaclable"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
+                android:inputType="phone"
                 android:layout_marginTop="8dp" />
 
-
-
+            <!-- Submit Button -->
             <Button
+                android:id="@+id/btnCreateCase"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-
                 android:text="Create Case"
                 android:backgroundTint="#154854"
-                android:id="@+id/btnCreateCase"
-                android:layout_marginBottom="20dp"
-                />
-
+                android:layout_marginBottom="20dp" />
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>

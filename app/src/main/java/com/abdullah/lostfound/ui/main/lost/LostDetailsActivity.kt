@@ -28,15 +28,16 @@ class LostDetailsActivity : AppCompatActivity() {
         viewModel = LostDetailsViewModel()
         lost = Gson().fromJson(intent.getStringExtra("data"), Lost::class.java)
 
-        val userId = binding.userId.text.toString()
-        val postDate = binding.postDate.text.toString()
-        val item = binding.item.text.toString()
-        val extraInformation = binding.extraInfromation.text.toString()
-        val postalAddress = binding.postalAddress.text.toString()
-        val userName = binding.userName.text.toString()
-        val userEmail = binding.userEmail.text.toString()
-        val userContact = binding.userContact.text.toString()
-        val status = binding.status.text.toString()
+        binding.userId.text = intent.getStringExtra("userId")
+        binding.postDate.text = intent.getStringExtra("postDate")
+        binding.categoryinput.text = intent.getStringExtra("categoryinput")
+        binding.descriptioninput.text = intent.getStringExtra("descriptioninput")
+        binding.addressinput.text = intent.getStringExtra("addressinput")
+        binding.nameinput.text = intent.getStringExtra("nameinput")
+        binding.email.text = intent.getStringExtra("email")
+        binding.contactinput.text = intent.getStringExtra("contactinput")
+        binding.status.text = intent.getStringExtra("status")
+        binding.imageView2.setImageURI(android.net.Uri.parse(lost.image))
 
         val user: FirebaseUser = AuthRepository().getCurrentUser()!!
         var isAdmin = false

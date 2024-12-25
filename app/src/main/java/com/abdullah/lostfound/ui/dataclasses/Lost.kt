@@ -1,6 +1,7 @@
 package com.abdullah.lostfound.ui.dataclasses
 
 class Lost{
+    var isFound: Boolean=true
     var contact: String=""
     var address: String=""
     var id:String=""
@@ -17,6 +18,9 @@ class Lost{
     var userId: String=""
     var userName: String=""
     var item: Lost? = null
+    var postDate: String=""
+    var extraInformation: String=""
+    var isLost: Boolean=false //
 
 
 

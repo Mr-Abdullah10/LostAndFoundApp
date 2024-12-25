@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/categoryinput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -54,9 +54,9 @@
         android:text="Short description of the item goes here."
         android:textSize="14sp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintStart_toStartOf="@id/title"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintEnd_toEndOf="@id/title" />
+        app:layout_constraintStart_toStartOf="@id/categoryinput"
+        app:layout_constraintTop_toBottomOf="@id/categoryinput"
+        app:layout_constraintEnd_toEndOf="@id/categoryinput" />
 
     <TextView
         android:id="@+id/contact"
@@ -66,7 +66,7 @@
         android:textColor="@color/theme_color"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/categoryinput"
         app:layout_constraintTop_toBottomOf="@id/desc" />
 
 
