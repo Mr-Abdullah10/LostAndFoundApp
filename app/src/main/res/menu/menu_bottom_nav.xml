@@ -15,6 +15,6 @@
         android:title="Found" />
     <item
         android:id="@+id/item_search"
-        android:icon="@drawable/search"
-        android:title="Search" />
+        android:icon="@drawable/baseline_cloud_done_24"
+        android:title="Completed" />
 </menu>

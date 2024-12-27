@@ -62,7 +62,11 @@ class LostAdapter(private val items: List<Any>) : RecyclerView.Adapter<RecyclerV
                     putExtra("email", lostItem.email)
                     putExtra("contactinput", lostItem.contact)
                     putExtra("status", lostItem.status)
-                    putExtra("image", lostItem.image)
+                    putExtra("imageView2", lostItem.image)
+                    putExtra("spinnerPostType", if (lostItem.isLost) "Lost" else "Found")
+                    putExtra("isLost", lostItem.isLost)
+                    putExtra("isFound", lostItem.isFound)
+
                 }
                 holder.itemView.context.startActivity(intent)
             }

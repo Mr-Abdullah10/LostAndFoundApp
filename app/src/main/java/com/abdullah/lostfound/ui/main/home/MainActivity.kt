@@ -18,12 +18,15 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.abdullah.lostfound.AboutUsActivity
 import com.abdullah.lostfound.dataSource.CloudinaryUploadHelper.Companion.initializeCloudinary
 import com.abdullah.lostfound.R
+import com.abdullah.lostfound.ui.Auth.AuthViewModel
 import com.abdullah.lostfound.ui.Auth.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.messaging.FirebaseMessaging
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     companion object {
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         initializeCloudinary(this)
+
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -84,9 +88,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val viewModel: AuthViewModel by viewModels()
         when (item.itemId) {
-            R.id.item_logout -> viewModel.logout()
+            R.id.item_logout -> {
+                lifecycleScope.launch { // Launch a coroutine
+                    viewModel.Logout()
+                    startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+                    finish()
+                }
+            }
             R.id.item_about_us -> {
+                startActivity(Intent(this, AboutUsActivity::class.java))
                 // Handle About Us logic
             }
         }

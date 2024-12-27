@@ -15,7 +15,9 @@
         android:theme="@style/Theme.LostFound"
         tools:replace="android:fullBackupContent"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.main.lost.LostDetailsActivity"
             android:exported="false" />

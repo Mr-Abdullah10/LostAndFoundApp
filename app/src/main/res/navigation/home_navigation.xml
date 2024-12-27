@@ -10,14 +10,14 @@
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/item_lost"
-        android:name="com.abdullah.lostfound.LostFragment"
+        android:name="com.abdullah.lostfound.ui.main.home.LostFragment"
         android:label="LostFragment" />
     <fragment
         android:id="@+id/item_found"
-        android:name="com.abdullah.lostfound.FoundFragment"
+        android:name="com.abdullah.lostfound.ui.main.home.FoundFragment"
         android:label="FoundFragment" />
     <fragment
         android:id="@+id/item_search"
-        android:name="com.abdullah.lostfound.SearchFragment"
-        android:label="SearchFragment" />
+        android:name="com.abdullah.lostfound.ui.main.home.CompleteFragment"
+        android:label="CompleteFragment" />
 </navigation>

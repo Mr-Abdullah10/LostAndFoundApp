@@ -5,9 +5,12 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
+import com.abdullah.lostfound.R
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.auth.oauth2.GoogleCredentials
 import org.json.JSONObject
+import java.io.IOException
 import java.util.concurrent.Executors
 
 class FCMHelper {
@@ -72,17 +75,17 @@ class FCMHelper {
     // Helper function to get access token
     private fun getAccessToken(context: Context, callback: AccessTokenCallback) {
         Executors.newSingleThreadExecutor().execute {
-            //try {
-                //val googleCredentials = GoogleCredentials
-                   // .fromStream(context.resources.openRawResource(R.raw.services))
-                   // .createScoped(listOf("https://www.googleapis.com/auth/firebase.messaging"))
-               // googleCredentials.refreshIfExpired()
-               // val token = googleCredentials.accessToken.tokenValue
+            try {
+                val googleCredentials = GoogleCredentials
+                    .fromStream(context.resources.openRawResource(R.raw.services))
+                    .createScoped(listOf("https://www.googleapis.com/auth/firebase.messaging"))
+                googleCredentials.refreshIfExpired()
+                val token = googleCredentials.accessToken.tokenValue
 
-               // Handler(Looper.getMainLooper()).post {
-                //    callback.onSuccess(token)
-               // }
-          //  } catch (e: IOException) {
+                Handler(Looper.getMainLooper()).post {
+                    callback.onSuccess(token)
+                }
+            } catch (e: IOException) {
                 Handler(Looper.getMainLooper()).post {
                     Toast.makeText(context, "IO exception", Toast.LENGTH_SHORT).show()
                     callback.onError()
@@ -95,5 +98,5 @@ class FCMHelper {
     interface AccessTokenCallback {
         fun onSuccess(token: String)
         fun onError()
-    }
+    }}
 

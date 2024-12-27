@@ -19,8 +19,8 @@ class Lost{
     var userName: String=""
     var item: Lost? = null
     var postDate: String=""
-    var extraInformation: String=""
-    var isLost: Boolean=false //
+    var isLost: Boolean=false
+    var isLostorFound: Boolean=false // False for Lost, true for Found
 
 
 

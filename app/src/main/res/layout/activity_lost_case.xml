@@ -43,7 +43,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <!-- Is Lost Item -->
+            <!-- Spinner for Post Type -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,67 +51,37 @@
                 android:text="Is this a Lost or Found Item?"
                 android:textStyle="bold" />
 
-            <RadioGroup
-                android:id="@+id/radioGroupLostFound"
+            <Spinner
+                android:id="@+id/spinnerPostType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <RadioButton
-                    android:id="@+id/radioLost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lost"
-                    android:checked="true"
-                    android:textColor="#5D6D7E" />
-
-                <RadioButton
-                    android:id="@+id/radioFound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Found"
-                    android:layout_marginStart="20dp"
-                    android:textColor="#5D6D7E" />
-            </RadioGroup>
+                android:layout_marginTop="8dp" />
 
             <!-- Image -->
             <TextView
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Image" />
+
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/baseline_add_24"
-                android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/baseline_add_24" />
 
-            <!-- User ID -->
-            <TextView
-                android:id="@+id/userIdLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="User ID" />
 
-            <EditText
-                android:id="@+id/userId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter User ID"
-                android:background="@drawable/edit_text_background"
-                android:padding="12dp"
-                android:inputType="textCapWords"
-                android:layout_marginTop="8dp" />
 
             <TextView
                 android:id="@+id/categorylabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category"
-                android:layout_marginTop="15dp" />
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"/>
+
             <Spinner
                 android:id="@+id/categoryinput"
                 android:layout_width="match_parent"
@@ -124,13 +94,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Post Date" />
+                android:text="Post Date"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/postDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Post Date"
+                android:hint="DD/MM/YYYY"
                 android:background="@drawable/edit_text_background"
                 android:padding="12dp"
                 android:inputType="date"
@@ -142,7 +113,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Name" />
+                android:text="Name"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/nameinput"
@@ -160,7 +132,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Email" />
+                android:text="Email"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/email"
@@ -178,7 +151,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Item Description" />
+                android:text="Item Description"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/descriptioninput"
@@ -196,7 +170,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Address" />
+                android:text="Address"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/addressinput"
@@ -214,7 +189,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Contact Number" />
+                android:text="Contact Number"
+                android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/contactinput"

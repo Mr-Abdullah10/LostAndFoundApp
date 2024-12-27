@@ -6,10 +6,11 @@ import com.google.firebase.auth.userProfileChangeRequest
 import kotlinx.coroutines.tasks.await
 
 class AuthRepository {
-    suspend fun logout(): Result<Boolean> {
+    suspend fun logout():Result<Boolean>{
         FirebaseAuth.getInstance().signOut()
         return Result.success(true)
     }
+
 
     suspend fun login(email: String, password: String): Result<FirebaseUser> {
         return try {
@@ -45,4 +46,7 @@ class AuthRepository {
     fun getCurrentUser(): FirebaseUser? {
         return FirebaseAuth.getInstance().currentUser
     }
-}
+
+
+    }
+

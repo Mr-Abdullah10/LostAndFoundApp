@@ -35,7 +35,18 @@ class LostRepository {
 
 
     fun getLosts() =
-        lostCollection.snapshots().map { it.toObjects(Lost::class.java) }
+        lostCollection.whereEqualTo("status", "Pending").snapshots().map { it.toObjects(Lost::class.java) }
+
+    fun getFoundItem() =
+        lostCollection.whereEqualTo("found", true).snapshots().map { it.toObjects(Lost::class.java) }
+
+    fun getLostItem() =
+        lostCollection.whereEqualTo("lost", true).snapshots().map { it.toObjects(Lost::class.java) }
+
+    fun completed() = lostCollection
+        .whereIn("status", listOf("Delivered", "Item Claimed"))
+        .snapshots()
+        .map { it.toObjects(Lost::class.java) }
 
 
 

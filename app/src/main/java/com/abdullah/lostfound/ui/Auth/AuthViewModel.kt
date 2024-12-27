@@ -46,6 +46,17 @@ class AuthViewModel :ViewModel(){
         }
     }
 
+    suspend fun Logout(){
+        val result=AuthRepository().logout()
+        if (result.isSuccess){
+            currentUser.value=null
+        }else{
+            failureMessage.value=result.exceptionOrNull()?.message
+        }
+
+
+    }
+
     //fun checkUser(){
      //   currentUser.value=authRepository.getCurrentUser()
     //}
