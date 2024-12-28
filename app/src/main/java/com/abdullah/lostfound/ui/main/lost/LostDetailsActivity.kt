@@ -32,6 +32,7 @@ class LostDetailsActivity : AppCompatActivity() {
 
         // Retrieve the fragment source identifier
         val isFromLostFragment = intent.getBooleanExtra("isFromLostFragment", true)
+        //val isFromCompleteFragment = intent.getBooleanExtra("isFromCompleteFragment", true)
 
         // Populate UI elements with Lost data
         binding.postDate.text = intent.getStringExtra("postDate")
@@ -63,11 +64,21 @@ class LostDetailsActivity : AppCompatActivity() {
             if (isFromLostFragment) {
                 binding.claimItem.visibility = View.GONE // Hide Claim button in Lost Fragment
                 binding.returnItem.visibility = View.VISIBLE // Show Return button in Lost Fragment
-            } else {
+           }
+//            else  if(isFromCompleteFragment){
+//                binding.claimItem.visibility = View.GONE // Hide Claim button in Complete Fragment
+//                binding.returnItem.visibility = View.GONE // Hide Return button in Complete Fragment
+//            }
+            else {
                 binding.claimItem.visibility = View.VISIBLE // Show Claim button in Found Fragment
                 binding.returnItem.visibility = View.GONE // Hide Return button in Found Fragment
             }
         }
+        if(intent.getStringExtra("status")=="Delivered"){
+            binding.claimItem.visibility = View.GONE
+            binding.returnItem.visibility = View.GONE
+        }
+
 
         if (!isAdmin || lost.status == "Case Deleted") {
             binding.deleteCase.visibility = View.GONE

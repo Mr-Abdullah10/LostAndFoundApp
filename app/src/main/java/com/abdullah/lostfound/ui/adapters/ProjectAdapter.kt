@@ -67,6 +67,7 @@ class LostAdapter(private val items: List<Any>) : RecyclerView.Adapter<RecyclerV
                     putExtra("isLost", lostItem.isLost)
                     putExtra("isFound", lostItem.isFound)
                     putExtra("isFromLostFragment", lostItem.isLost )
+                    //putExtra("isFromCompleteFragment", lostItem.isFound )
 
                 }
                 holder.itemView.context.startActivity(intent)
