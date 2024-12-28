@@ -37,16 +37,7 @@ class CompleteFragmentViewModel: ViewModel() {
                 }
         }
     }
-//    fun readcompleted1() {
-//        viewModelScope.launch {
-//            lostRepository.completed1().catch {
-//                failureMessage.value = it.message
-//            }
-//                .collect {
-//                    data.value = it
-//                }
-//        }
-//    }
+
 
 
 

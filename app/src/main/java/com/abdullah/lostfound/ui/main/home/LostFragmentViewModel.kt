@@ -16,17 +16,20 @@ class LostFragmentViewModel: ViewModel() {
     val data = MutableStateFlow<List<Lost>?>(null)
 
     init {
-        readLostItem()
+        readLostItem(lost = true, status = "Pending")
     }
 
-    fun readLostItem() {
+
+    fun readLostItem(lost: Boolean, status: String) {
         viewModelScope.launch {
-            lostRepository.getLostItem().catch {
-                failureMessage.value = it.message
-            }
-                .collect {
-                    data.value = it
+            lostRepository.getLostItem(lost, status)
+                .catch { exception ->
+                    failureMessage.value = exception.message
+                }
+                .collect { itemList ->
+                    data.value = itemList
                 }
         }
     }
+
 }

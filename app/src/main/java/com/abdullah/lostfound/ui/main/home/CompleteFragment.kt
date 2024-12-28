@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.abdullah.lostfound.databinding.FragmentSearchBinding
+import com.abdullah.lostfound.databinding.FragmentCompleteBinding
 import com.abdullah.lostfound.ui.adapters.LostAdapter
 import com.abdullah.lostfound.ui.dataclasses.Lost
 
@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class CompleteFragment : Fragment() {
     lateinit var adapter: LostAdapter
-    lateinit var binding: FragmentSearchBinding
+    lateinit var binding: FragmentCompleteBinding
     lateinit var viewModel: CompleteFragmentViewModel
     val items=ArrayList<Lost>()
 
@@ -26,7 +26,7 @@ class CompleteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentSearchBinding.inflate(inflater,container,false)
+        binding= FragmentCompleteBinding.inflate(inflater,container,false)
         return binding.root
     }
 

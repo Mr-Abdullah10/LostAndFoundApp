@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
-class FoundFragmetnViewModel: ViewModel() {
+class FoundFragmentViewModel: ViewModel() {
 
     val lostRepository = LostRepository()
 
@@ -16,17 +16,20 @@ class FoundFragmetnViewModel: ViewModel() {
     val data = MutableStateFlow<List<Lost>?>(null)
 
     init {
-        readFoundItem()
+        readFoundItem(found = true, status = "pending")
     }
 
-    fun readFoundItem() {
+
+    fun readFoundItem(found: Boolean, status: String) {
         viewModelScope.launch {
-            lostRepository.getFoundItem().catch {
-                failureMessage.value = it.message
-            }
-                .collect {
-                    data.value = it
+            lostRepository.getFoundItem(found, status)
+                .catch { exception ->
+                    failureMessage.value = exception.message // Handle errors gracefully
+                }
+                .collect { itemList ->
+                    data.value = itemList // Update the live data with the retrieved items
                 }
         }
     }
+
 }

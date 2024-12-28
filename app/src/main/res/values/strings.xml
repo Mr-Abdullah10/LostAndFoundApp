@@ -10,4 +10,5 @@
         <item>Others</item>
 
     </string-array>
+    <string name="image_desc">Splash Image</string>
 </resources>

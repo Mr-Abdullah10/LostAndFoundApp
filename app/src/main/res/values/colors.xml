@@ -2,6 +2,29 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="theme_color">#00BCD4</color>
+    <color name="theme_color">#4675D5</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="primary_color">#6200EE</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="divider_color">#BDBDBD</color>
+    <color name="gray_500">#9E9E9E</color> <!-- Default Gray -->
+    <color name="gray_600">#757575</color> <!-- Dark Gray -->
+    <color name="color_start">#FF6F00</color>  <!-- Start color (orange) -->
+    <color name="color_end">#FFAB00</color>    <!-- End color (yellow) -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Text Colors -->
+    <color name="textColorDark">#212121</color>
+    <color name="textColorLight">#FFFFFF</color>
+
+    <!-- Background Colors -->
+    <color name="headerBackgroundStart">#3F51B5</color>
+    <color name="headerBackgroundEnd">#FF4081</color>
+
+    <!-- Menu Item Colors -->
+    <color name="menuItemTextColor">#212121</color>
+    <color name="menuIconColor">#212121</color>
 
 </resources>

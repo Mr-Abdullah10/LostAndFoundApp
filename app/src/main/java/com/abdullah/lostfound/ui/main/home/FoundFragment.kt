@@ -18,7 +18,7 @@ class FoundFragment : Fragment() {
     lateinit var adapter: LostAdapter
     val items=ArrayList<Lost>()
     lateinit var binding: FragmentFoundBinding
-    lateinit var viewModel: FoundFragmetnViewModel
+    lateinit var viewModel: FoundFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +35,7 @@ class FoundFragment : Fragment() {
         binding.recyclerview.adapter=adapter
         binding.recyclerview.layoutManager= LinearLayoutManager(context)
 
-        viewModel= FoundFragmetnViewModel()
+        viewModel= FoundFragmentViewModel()
         lifecycleScope.launch {
             viewModel.failureMessage.collect {
                 it?.let {

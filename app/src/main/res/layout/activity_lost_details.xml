@@ -1,169 +1,239 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/background_color">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp"
-        android:background="@color/white"
-        android:elevation="4dp"
-        android:layout_margin="8dp">
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        android:radius="16dp"
+        android:backgroundTint="@color/white">
 
-        <!-- Image Section -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Image" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/baseline_add_24"
-            android:scaleType="fitCenter" />
-
-        <!-- Post Type Spinner -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post Type"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinnerPostType"
-            android:text="Lost Item or Found Item"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <!-- Image Section -->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Image"-->
+<!--                android:textColor="@color/primary_text"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginTop="16dp" />-->
 
-        <!-- Post Date -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post Date"
-            android:textStyle="bold" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                -->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginBottom="16dp"-->
+<!--                android:background="@drawable/rounded_image_border" />-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/postDate"
-            android:text="2024-12-10"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            <!-- Post Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Type"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                />
 
-        <!-- Item -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/spinnerPostType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lost Item or Found Item"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/categoryinput"
-            android:text="Smart Watch"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            <!-- Post Date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Date"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"/>
 
-        <!-- Item Description -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item Description"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/postDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2024-12-10"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/descriptioninput"
-            android:text="Fragile, Handle with care"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            <!-- Item -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"/>
 
-        <!-- Address -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/categoryinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smart Watch"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/addressinput"
-            android:text="123 Street Name, City, Country"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            <!-- Item Description -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item Description"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
 
-        <!-- User Information -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="User Information"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/descriptioninput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fragile, Handle with care"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nameinput"
-            android:text="John Doe"
-            android:textColor="@color/black"
-            android:paddingBottom="4dp" />
+            <!-- Address -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:text="johndoe@example.com"
-            android:textColor="@color/black"
-            android:paddingBottom="4dp" />
+            <TextView
+                android:id="@+id/addressinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="123 Street Name, City, Country"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/contactinput"
-            android:text="+123456789"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            <!-- User Information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Information"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
 
-        <!-- Status -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Status"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/nameinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/status"
-            android:text="Pending"
-            android:textColor="@color/black"
-            android:paddingBottom="8dp" />
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="johndoe@example.com"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
 
-        <!-- Buttons -->
-        <Button
-            android:id="@+id/claim_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Claim Item" />
+            <TextView
+                android:id="@+id/contactinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+123456789"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
 
-        <Button
-            android:id="@+id/return_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Return Item" />
+            <!-- Status -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textStyle="bold"
+                android:textColor="@color/theme_color"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/confirm_item_received"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm Item Received" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pending"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Buttons Section -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/claim_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Claim Item"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/theme_color"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                     />
+
+                <Button
+                    android:id="@+id/return_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Return Item"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/theme_color"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                     />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/delete_case"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete Case"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:backgroundTint="#C71717"
+                android:padding="12dp"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 </ScrollView>

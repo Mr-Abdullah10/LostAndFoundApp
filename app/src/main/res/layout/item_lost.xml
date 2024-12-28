@@ -10,65 +10,120 @@
     android:layout_marginBottom="2dp"
     android:background="@color/white">
 
+    <!-- Product Image -->
     <ImageView
         android:id="@+id/productImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:contentDescription="Image Item"
-        android:layout_marginEnd="16dp"
+        android:contentDescription="Product Image"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/splash"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/splash" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+    <!-- Name Label -->
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/productImage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="10dp" />
+
+    <!-- Name Value -->
     <TextView
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:text="Applicant Name"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/name_label"
+        app:layout_constraintTop_toTopOf="@id/name_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/productImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="8dp" />
 
+    <!-- Category Label -->
+    <TextView
+        android:id="@+id/category_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/name_label"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:layout_marginTop="8dp" />
+
+    <!-- Category Value -->
     <TextView
         android:id="@+id/categoryinput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="Item Name"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/category_label"
+        app:layout_constraintTop_toTopOf="@id/category_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/productImage"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        android:layout_marginLeft="8dp" />
 
+    <!-- Description Label -->
+    <TextView
+        android:id="@+id/desc_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/category_label"
+        app:layout_constraintTop_toBottomOf="@id/categoryinput"
+        android:layout_marginTop="8dp" />
 
-
+    <!-- Description Value -->
     <TextView
         android:id="@+id/desc"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
         android:text="Short description of the item goes here."
+        android:textColor="@color/gray_600"
         android:textSize="14sp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintStart_toStartOf="@id/categoryinput"
-        app:layout_constraintTop_toBottomOf="@id/categoryinput"
-        app:layout_constraintEnd_toEndOf="@id/categoryinput" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/desc_label"
+        app:layout_constraintTop_toTopOf="@+id/desc_label" />
 
+    <!-- Contact Label -->
+    <TextView
+        android:id="@+id/contact_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Info:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/desc_label"
+        app:layout_constraintTop_toBottomOf="@id/desc"
+        android:layout_marginTop="8dp" />
+
+    <!-- Contact Value -->
     <TextView
         android:id="@+id/contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact"
         android:textColor="@color/theme_color"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/categoryinput"
-        app:layout_constraintTop_toBottomOf="@id/desc" />
-
-
+        app:layout_constraintStart_toEndOf="@id/contact_label"
+        app:layout_constraintTop_toTopOf="@id/contact_label"
+        android:layout_marginLeft="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
