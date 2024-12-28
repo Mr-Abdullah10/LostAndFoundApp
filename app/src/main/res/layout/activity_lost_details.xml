@@ -19,24 +19,24 @@
             android:padding="20dp">
 
             <!-- Image Section -->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Image"-->
-<!--                android:textColor="@color/primary_text"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:layout_marginTop="16dp" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image"
+                android:textColor="@color/theme_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="180dp"-->
-<!--                -->
-<!--                android:scaleType="centerCrop"-->
-<!--                android:layout_marginTop="8dp"-->
-<!--                android:layout_marginBottom="16dp"-->
-<!--                android:background="@drawable/rounded_image_border" />-->
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+
+                android:scaleType="centerCrop"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"/>
+<!--                android:background="@drawable/rounded_image_border" -->
 
             <!-- Post Type -->
             <TextView

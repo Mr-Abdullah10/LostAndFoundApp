@@ -66,27 +66,13 @@ class LostAdapter(private val items: List<Any>) : RecyclerView.Adapter<RecyclerV
                     putExtra("spinnerPostType", if (lostItem.isLost) "Lost" else "Found")
                     putExtra("isLost", lostItem.isLost)
                     putExtra("isFound", lostItem.isFound)
+                    putExtra("isFromLostFragment", lostItem.isLost )
 
                 }
                 holder.itemView.context.startActivity(intent)
             }
         }
 
-        // Uncommented code to demonstrate additional logic for OrderViewHolder if needed
-//        else if (holder is OrderViewHolder) {
-//            val order = items[position] as Order
-//            holder.binding.productTitle.text = order.item?.title
-//            holder.binding.productPrice.text = "$${order.item?.price!! * order.quantity}"
-//            holder.binding.productQuantity.text = "Quantity: ${order.quantity}"
-//
-//            holder.binding.status.text = order.status
-//
-//            holder.itemView.setOnClickListener {
-//                val intent = Intent(holder.itemView.context, OrderDetailsActivity::class.java).apply {
-//                    putExtra("data", Gson().toJson(order))
-//                }
-//                holder.itemView.context.startActivity(intent)
-//            }
-//        }
+
     }
 }

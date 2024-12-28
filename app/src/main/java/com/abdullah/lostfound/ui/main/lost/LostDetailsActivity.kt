@@ -5,9 +5,11 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.abdullah.lostfound.R
 import com.abdullah.lostfound.Repositories.AuthRepository
 import com.abdullah.lostfound.databinding.ActivityLostDetailsBinding
 import com.abdullah.lostfound.ui.dataclasses.Lost
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseUser
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
@@ -28,6 +30,9 @@ class LostDetailsActivity : AppCompatActivity() {
         // Parse Lost object from Intent
         lost = Gson().fromJson(intent.getStringExtra("data"), Lost::class.java)
 
+        // Retrieve the fragment source identifier
+        val isFromLostFragment = intent.getBooleanExtra("isFromLostFragment", true)
+
         // Populate UI elements with Lost data
         binding.postDate.text = intent.getStringExtra("postDate")
         binding.categoryinput.text = intent.getStringExtra("categoryinput")
@@ -39,9 +44,30 @@ class LostDetailsActivity : AppCompatActivity() {
         binding.status.text = intent.getStringExtra("status")
         binding.spinnerPostType.text = if (lost.isLost) "Lost" else "Found"
 
-        // Set visibility for buttons
+        // Load image using Glide
+        Glide.with(this)
+            .load(lost.image)
+            .error(R.drawable.logo)
+            .placeholder(R.drawable.logo)
+            .into(binding.imageView2)
+
+        // Set visibility for buttons based on fragment source
         val user: FirebaseUser = AuthRepository().getCurrentUser()!!
         val isAdmin = user.email == "abdullahahsan438@gmail.com"
+
+        // Admin can see all buttons
+        if (isAdmin) {
+            binding.claimItem.visibility = View.VISIBLE
+            binding.returnItem.visibility = View.VISIBLE
+        } else {
+            if (isFromLostFragment) {
+                binding.claimItem.visibility = View.GONE // Hide Claim button in Lost Fragment
+                binding.returnItem.visibility = View.VISIBLE // Show Return button in Lost Fragment
+            } else {
+                binding.claimItem.visibility = View.VISIBLE // Show Claim button in Found Fragment
+                binding.returnItem.visibility = View.GONE // Hide Return button in Found Fragment
+            }
+        }
 
         if (!isAdmin || lost.status == "Case Deleted") {
             binding.deleteCase.visibility = View.GONE
@@ -59,7 +85,6 @@ class LostDetailsActivity : AppCompatActivity() {
         }
 
         binding.deleteCase.setOnClickListener {
-            // Call deleteLost function in ViewModel
             viewModel.deleteCase(lost.id)
         }
 
@@ -67,33 +92,6 @@ class LostDetailsActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewModel.isUpdated.collect { isUpdated ->
                 isUpdated?.let {
-                    if (lost.status == "Item Claimed") {
-                        // Uncommented code for sending notifications
-                        // NotificationRepository().sendNotification(
-                        //     lost.userId,
-                        //     "Item Claimed",
-                        //     "Your item has been claimed by ${user.displayName}",
-                        //     this@LostDetailsActivity
-                        // )
-                    }
-                    if (lost.status == "Delivered") {
-                        // Uncommented code for sending notifications
-                        // NotificationRepository().sendNotification(
-                        //     lost.userId,
-                        //     "Item Returned",
-                        //     "Your lost of ${lost.item?.title} has been returned. You will receive it soon at your address.",
-                        //     this@LostDetailsActivity
-                        // )
-                    }
-                    if (lost.status == "Item Received") {
-                        // Uncommented code for sending notifications
-                        // NotificationRepository().sendNotification(
-                        //     MainActivity.adminUid,
-                        //     "Item Received",
-                        //     "${lost.userName} has received the lost ${lost.item?.title}.",
-                        //     this@LostDetailsActivity
-                        // )
-                    }
                     Toast.makeText(this@LostDetailsActivity, "Updated", Toast.LENGTH_SHORT).show()
                     finish()
                 }
@@ -106,7 +104,7 @@ class LostDetailsActivity : AppCompatActivity() {
                 isDeleted?.let {
                     if (it) {
                         Toast.makeText(this@LostDetailsActivity, "Case deleted successfully", Toast.LENGTH_SHORT).show()
-                        finish() // Close activity after deletion
+                        finish()
                     }
                 }
             }

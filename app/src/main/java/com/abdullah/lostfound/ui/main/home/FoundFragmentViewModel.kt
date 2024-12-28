@@ -16,13 +16,13 @@ class FoundFragmentViewModel: ViewModel() {
     val data = MutableStateFlow<List<Lost>?>(null)
 
     init {
-        readFoundItem(found = true, status = "pending")
+        readFoundItem(found = true, status = "Pending")
     }
 
 
     fun readFoundItem(found: Boolean, status: String) {
         viewModelScope.launch {
-            lostRepository.getFoundItem(found, status)
+            lostRepository.getFoundItem(found = true, status = "Pending")
                 .catch { exception ->
                     failureMessage.value = exception.message // Handle errors gracefully
                 }

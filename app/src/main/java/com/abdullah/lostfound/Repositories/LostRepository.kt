@@ -10,8 +10,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.tasks.await
 
 class LostRepository {
-    val db = FirebaseFirestore.getInstance()
-    val COLLECTION_CASES = "losts"
 
     private val TAG = "LostRepository"
     val lostCollection = FirebaseFirestore.getInstance().collection("losts")
@@ -42,12 +40,16 @@ class LostRepository {
     fun getLosts() =
         lostCollection.whereEqualTo("status", "Pending").snapshots().map { it.toObjects(Lost::class.java) }
 
-    fun getFoundItem(found: Boolean, status: String) =
+//    fun getFoundItem() =
+//        lostCollection.whereEqualTo("found", true).snapshots().map { it.toObjects(Lost::class.java) }
+
+    fun getFoundItem(found:Boolean, status: String) =
         lostCollection
-            .whereEqualTo("found", found)
-            .whereEqualTo("status", status)
+            .whereEqualTo("found", found) // Use the passed parameter 'lost'
+            .whereEqualTo("status", status) // Use the passed parameter 'status'
             .snapshots()
             .map { it.toObjects(Lost::class.java) }
+
 
 
     fun getLostItem(lost: Boolean, status: String) =
